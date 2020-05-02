@@ -1,0 +1,82 @@
+body{
+    margin: 0px;
+  }
+  * {
+  box-sizing: border-box;
+}
+  .modal {
+  position: absolute; /* Stay in place */
+  /* Sit on top */
+   background-image:linear-gradient(to right bottom,yellow,red);
+    background-size:cover;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color:white;
+  margin: 2% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 500px;
+  padding: 8px;
+  height:600px;
+  padding-left:5%;
+  opacity:0.8;
+  border-radius: 15px;
+  box-shadow: 5px 4px 7px 5px black;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0 5px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  padding-left:2px;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Add a background color when the inputs get focus */
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 5px 15px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity:1;
+box-shadow: 2px 2px 5px 2px black;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 35%;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 550px) {
+  .cancelbtn, .signupbtn {
+     width: 80%;
+  }
+ 
+  .modal-content{
+    width:85%;
+
+  }
+}

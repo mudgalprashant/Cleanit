@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset = 'utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'slide.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'nav.css' %}">
+
+
+</head>
+<body>
+{% if messages %}
+<div class="errormsg">
+  {% for message in messages %}
+  <span>{{ message }}</span>
+
+  {% endfor %}
+  {% endif %}
+<div class="container">
+        <div class="buttonnav">
+         <a class="openbar" onclick="openNavbar()">☰</a> 
+       </div>
+        <div class="dropdown-content" id="dropmenu">
+       <a class="closemenu" onclick="closeNavbar()">&times;</a>  
+
+      
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile-page' %}">Profile</a>
+      <a href="">Create Team</a>
+      <a href="">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'login-page' %}">Profile</a>
+      <a href="{% url 'login-page' %}">Create Team</a>
+      <a href="{% url 'login-page' %}">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'login-page' %}">Login/Signup</a>
+      {% endif %}
+
+    </div>
+        <div class="header-left" id="topnav">
+
+        {% if user.is_authenticated %}
+          <ul>
+             	
+            <li><a href="{% url 'profile-page' %}">Profile</a></li>
+            <li><a href="">Create Team</a></li>
+            <li><a href="">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+         {% else %}
+         <ul>
+             	
+            <li><a href="{% url 'login-page' %}">Profile</a></li>
+            <li><a href="{% url 'login-page' %}">Create Team</a></li>
+            <li><a href="{% url 'login-page' %}">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'login-page' %}">Login/Signup</a></li>
+          </ul>
+         {% endif %}
+        </div>
+      </div>    
+
+
+
+<div class="tinted-image">
+	<div class="content">
+		<h2 >Step Forward for a clean India !</h2>
+		<p style=" text-align: center; font-size:22px">This platform provides you a way to contibute to a cleaner and better India by organising Cleanliness drives and making a change.</p>
+	</div>
+</div>
+
+
+<div class="symbol">
+	<div  class="svghead">
+		<img src="{% static 'images/help.svg' %}" class="svg">
+		<h3>Join a cleanliness drive and contribute.</h3>
+		<button type="button" class="btn">Join Team</button>
+	</div>
+	<div  class="svghead">
+		<img src="{% static 'images/lead.svg' %}"  class="svg">
+		<h3>Initiate a cleanliness drive</h3>
+		<button type="button" class="btn">Create Team</button>
+	</div>
+</div>
+
+
+ <div class="slider">
+    	<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+			  <div class="mySlides fade">
+			    <div class="numbertext">1 / 3</div>
+			    <img src="{% static 'images/1.jpg' %}" style="width:100%; height:100%; border-radius: 10px;">
+			    <div class="text"></div>
+			  </div>
+
+			  <div class="mySlides fade">
+			    <div class="numbertext">2 / 3</div>
+			    <img src="{% static 'images/2.jpeg' %}" style="width:100%; height:100%; border-radius: 10px;">
+			    <div class="text"></div>
+			  </div>
+
+			  <div class="mySlides fade">
+			    <div class="numbertext">3 / 3</div>
+			    <img src="{% static 'images/3.jpeg' %}" style="width:100%; height:100%; border-radius: 10px;">
+			    <div class="text">	</div>
+			  </div>
+
+			  <!-- Next and previous buttons -->
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+<br>
+
+<!-- The dots/circles -->
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span>
+		  <span class="dot" onclick="currentSlide(2)"></span>
+		  <span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+</div>
+
+<div class="footer" >
+<div class="first">
+	<h3 style="margin-left:50px; color:#e2e2e2">Contributors</h3>
+	<ul style="list-style-type: none; color:rgb(255,255,255);" >
+		
+		<li>Pradhyumna Singh Rathore</li>
+		<li>Prashant Mudgal</li>
+		<li>Kanak Agrawal</li>
+		<li>Pratya Chugh</li>
+	</ul>
+		<h5 style="text-align: center;">@copyright</h5>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'slide.js' %}"></script>
+<script type="text/javascript" src="{% static 'nav.js' %}"></script>
+</body>
+</html>

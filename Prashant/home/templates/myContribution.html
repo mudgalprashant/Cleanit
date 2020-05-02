@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'myContribution.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'nav.css' %}">
+</head>
+<body>
+	 <div class="container" >
+        <div class="buttonnav">
+         <a class="openbar" onclick="openNavbar()">☰</a> 
+       </div>
+        <div class="dropdown-content" id="dropmenu">
+       <a class="closemenu" onclick="closeNavbar()">&times;</a>  
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile-page' %}">Profile</a>
+      <a href="">Create Team</a>
+      <a href="">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'login-page' %}">Profile</a>
+      <a href="{% url 'login-page' %}">Create Team</a>
+      <a href="{% url 'login-page' %}">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'login-page' %}">Login/Signup</a>
+      {% endif %}
+    </div>
+        <div class="header-left" id="topnav">
+
+
+          {% if user.is_authenticated %}
+          <ul>
+             	
+            <li><a href="{% url 'profile-page' %}">Profile</a></li>
+            <li><a href="">Create Team</a></li>
+            <li><a href="">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+         {% else %}
+         <ul>
+             	
+            <li><a href="{% url 'login-page' %}">Profile</a></li>
+            <li><a href="{% url 'login-page' %}">Create Team</a></li>
+            <li><a href="{% url 'login-page' %}">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'login-page' %}">Login/Signup</a></li>
+          </ul>
+         {% endif %}
+        </div>
+      </div>  
+	<div class="created">
+		<h1 class="heading">Drives Initiated by {{user}}</h1>
+		<div class="cardContainer">
+			{% for drive in drives %}
+			<div class="card">
+				<div class="image">
+					<img src="{% static 'card_image.jpeg' %}">
+			     </div>
+				<h3>{{drive.name}}</h3>
+				<h4>{{drive.date}}</h4>
+				<h4>{{drive.place}}</h4>
+				<h4>{{drive.city}}</h4>
+
+			</div>
+			{% endfor %}
+			
+			<div class="clearfix">
+			</div>
+		</div>
+	<div class="joined">
+		<h1 class="heading">Drives Joined by Pratya</h1>
+		<div class="cardContainer">
+			<div class="card">
+				<div class="image">
+					<img src="{% static 'card_image.jpeg' %}">
+			     </div>
+				<h3>Drive name</h3>
+				<h4>Date</h4>
+				<h4>Address></h4>
+				<h4>City/Town</h4>
+
+			</div>
+			<div class="card">
+				
+					<img src="{% static 'card_image.jpeg' %}">
+			     
+				<h3>Drive name</h3>
+				<h4>Date</h4>
+				<h4>Address></h4>
+				<h4>City/Town</h4>
+
+			</div>
+
+			<div class="card">
+				
+				     <img src="{% static 'card_image.jpeg' %}">
+			     
+				<h3>Drive name</h3>
+				<h4>Date</h4>
+				<h4>Address></h4>
+				<h4>City/Town</h4>
+
+			</div>
+
+			<div class="card">
+				
+					<img src="{% static 'card_image.jpeg' %}">
+			     
+				<h3>Drive name</h3>
+				<h4>Date</h4>
+				<h4>Address></h4>
+				<h4>City/Town</h4>
+
+			</div>
+
+			<div class="card">
+				
+					<img src="{% static 'card_image.jpeg' %}">
+			     
+				<h3>Drive name</h3>
+				<h4>Date</h4>
+				<h4>Address></h4>
+				<h4>City/Town</h4>
+
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+
+	  <script type="text/javascript" src="{% static 'nav.js' %}"></script>	
+
+</body>
+</html>

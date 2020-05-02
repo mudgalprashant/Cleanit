@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'profile.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'nav.css' %}">
+</head>
+<body >
+
+    <div class="container" style="background-color: #b3ecff; font-color:white;">
+        <div class="buttonnav">
+         <a class="openbar" onclick="openNavbar()">☰</a> 
+       </div>
+        <div class="dropdown-content" id="dropmenu">
+       <a class="closemenu" onclick="closeNavbar()">&times;</a>  
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile-page' %}">Profile</a>
+      <a href="">Create Team</a>
+      <a href="">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'login-page' %}">Profile</a>
+      <a href="{% url 'login-page' %}">Create Team</a>
+      <a href="{% url 'login-page' %}">Join Team</a>
+      <a href="">Past Drives</a>
+      <a href="{% url 'login-page' %}">Login/Signup</a>
+      {% endif %}
+    </div>
+        <div class="header-left" id="topnav">
+
+
+          {% if user.is_authenticated %}
+          <ul>
+             	
+            <li><a href="{% url 'profile-page' %}">Profile</a></li>
+            <li><a href="">Create Team</a></li>
+            <li><a href="">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+         {% else %}
+         <ul>
+             	
+            <li><a href="{% url 'login-page' %}">Profile</a></li>
+            <li><a href="{% url 'login-page' %}">Create Team</a></li>
+            <li><a href="{% url 'login-page' %}">Join Team</a></li>
+            <li><a href="">Past Drives</a></li>
+            <li><a href="{% url 'login-page' %}">Login/Signup</a></li>
+          </ul>
+         {% endif %}
+        </div>
+      </div>  
+
+	<div class="top">
+
+		<img src="{% static 'avatar2.png' %}" >
+		<p style="margin-top:1.5%; font-size: 22px;">{{info.name}}</p>
+		<p style="margin-bottom: 3px;">{{info.username}}</p>
+		<div class="buttons" style="font-size: 22px;">
+			<a href="{% url 'myContribution' %}"><button type="button">My contributions</button ></a>
+			
+		</div>
+	</div>
+	<div class="info">
+		
+	    <div style="text-align: center; ">
+			<h2 >Personal Details</h2>
+			<hr class="line">
+		</div>
+		
+	<div class="details">
+		
+		<ul style="list-style-type:none;">
+			<li>Name       : - {{info.name}}</li>
+			<li>Gender     : - {{info.gender}}</li>
+			<li>Age        : - {{info.age}}</li>
+			<li>Address    : - {{info.address}}</li>
+			<li>Email id   : - {{info.email}}</li>
+			
+			<li>Profession : - {{info.profession}}</li>
+			<li>Contact    : - {{info.contact}}</li>
+		</ul>
+
+	
+    </div>
+	<div style="text-align: center";>
+		<a href="{% url 'edit' %}"><button type="button" style="align-self: center; margin-top:2%; padding:1%";>Edit Profile</button></a>
+    </div>
+
+     </div>
+     <script type="text/javascript" src="{% static 'nav.js' %}"></script>
+</body>
+</html>
