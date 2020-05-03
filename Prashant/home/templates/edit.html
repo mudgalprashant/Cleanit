@@ -9,11 +9,10 @@
 </head>
 <body>
 
- {% if messages %}
+{% if messages %}
 <div class="errormsg">
   {% for message in messages %}
   <span>{{ message }}</span>
-
   {% endfor %}
 </div>
   {% endif %}
