@@ -81,6 +81,7 @@ li{
 .details{
 	text-align:center;
 	padding-top: 18px;
+	margin-left:-30px;
 }
 
 @media only screen and (max-width:800px)
