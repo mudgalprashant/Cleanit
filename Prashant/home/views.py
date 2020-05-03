@@ -76,7 +76,7 @@ def edit(request):
 	if request.method == 'POST':
 		email = request.POST.get('email')
 		age = request.POST.get('age')
-		gender = request.POST.get('gemder')
+		gender = request.POST.get('gender')
 		address = request.POST.get('address')
 		profession = request.POST.get('profession')
 		contact = request.POST.get('contact')
@@ -91,8 +91,10 @@ def edit(request):
 		if age:
 			profile.age=age
 		if gender:
-			profile.gender = gender.value
+			profile.gender = gender.capitalize()
 		if address:
+			new_add = [part.capitalize() for part in address.split()]
+			address = " ".join(new_add)
 			profile.address = address
 		if profession:
 			profile.profession = profession
