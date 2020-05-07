@@ -1,0 +1,79 @@
+
+/* table */
+#myInput {
+    background-position: 10px 12px; 
+    background-repeat: no-repeat; 
+    width: 100%;
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+  }
+  
+  #myTable {
+    border-collapse: collapse; 
+    width: 100%; 
+    border: 1px solid #ddd; 
+    font-size: 18px; 
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left; 
+    padding: 12px; 
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: rgb(170, 245, 204);
+  }
+  .table-section{
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 13%;
+    
+  }
+  /* nav bar properties */
+  .navbarproperties{
+    padding-bottom: 3%;
+  }
+  /* nav bar */
+.navbar-brand{
+  font-size: 2rem;
+  color:#fff;
+ 
+}
+
+.navbar{
+  margin:0;
+  position:relative;
+  background-color:rgba(59, 231, 131);
+   
+  
+}
+.nav-item{
+  padding:0 5px;
+}
+.nav-link{
+  font-size:1.2rem;
+  font-family:"Monterrate-light";
+  color:#fff;
+}
+/* font */
+.fa{
+  padding-bottom: 10px;
+}
+/* footer contain */
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:rgba(59, 231, 131);
+  text-align: center;
+}
+.space{
+  padding:20px;
+}
