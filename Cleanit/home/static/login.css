@@ -1,0 +1,160 @@
+body{
+    margin: 0px;
+ height:100%;
+  }
+  * {
+  box-sizing: border-box;
+}
+.newbody{
+  margin: 0px;
+  background-image:linear-gradient(to right ,yellow ,red);
+  height:100%;
+  width:100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  }
+  .errormsg{
+    height:50px;
+    z-index:1;
+    background-color: #ffad99;
+    color: #e62e00;
+    text-align:center;
+    font-size:30px;
+    font-family:sans-serif;
+    padding-top:8px;
+    border-width:2px;
+    border-color:red;
+  }
+
+  .container{
+    display:inline-block;
+    margin-left:12.5%;
+    float:left;
+    opacity:0.8;
+     background-color: black;/* Fallback color */
+    background-color: rgba(0,0,0, 0.6);
+    width: 45%;
+    box-shadow: 10px 10px 10px black;
+    height: 90%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top:3%;
+}
+
+.heade{
+  margin-top:10%;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  font-size: 35px;
+ }
+
+ .aboutus{
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:40px;
+  color:#fff44f;
+  font-size: 24px;
+ }
+
+ .login{ 
+  display: inline-block;
+  margin-top: 3%;
+  width: 30%;
+  float:left;
+  height:90%;
+  text-align: center;
+  background-color:white;
+   opacity: 0.8;
+   margin-right:12.5%;
+    box-shadow: 10px 10px 10px black;
+}
+
+ .loginform{
+  
+  padding:15% 10%;
+ }
+
+ .one{
+  text-align:center; 
+  color:black;
+  font-size:18px;
+   font-weight: bold;
+ }
+.loginheader{
+  
+  font-size:35px;
+  text-shadow: 2px 2px 5px yellow;
+}
+
+ .two{
+  margin-left: 4px;
+  margin-top:8px;
+  font-size:18px;
+  color:black;
+  font-weight: bold;
+ }
+
+ .inputfield{
+    width: 80%; 
+    height:25px;
+    margin-top: 8px; 
+    margin-bottom: 5px;
+    border-bottom: 2px solid grey; 
+    border-left:none;
+    border-right:none;
+    border-top:none;
+ }
+
+.loginbutton{
+  margin-top: 10px; 
+  font-weight: bold;
+  background-color:grey;
+  width: 80%; 
+  border:none;
+  font-size:18px;
+  height:25px;
+  opacity:0.8;
+}
+.loginbutton:hover{
+  opacity:1;
+ }
+ .newuser{
+  color: black;
+  font-size:95%;
+  font-weight: bold;
+ }
+ 
+@media only screen and (max-width:800px)
+{
+  .container{
+    display: none;
+  }
+  .login{
+    margin-top:3%;
+    height: 90%;
+    width:70%;
+    margin-right:15%;
+    margin-left: 15%;
+  }
+  .loginform{
+    margin-top: 0%;
+
+  }
+} 
+@media only screen and (max-width:500px)
+{ .newbody{
+  background-image: none;
+  background-image:linear-gradient(to right ,yellow ,red);
+}
+  .login{
+    width:90%;
+    margin-right:5%;
+    margin-left: 5%;
+    background-color:white;
+    opacity: 0.6;
+    border-radius: 15px;
+  }
+}

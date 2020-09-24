@@ -1,0 +1,110 @@
+html {
+  box-sizing: border-box;
+}
+body{
+	margin:0;
+}
+
+img{
+	margin-top: 2%;
+	border-radius: 50%;
+	width:20%;
+	height:auto;
+}
+
+.buttons
+{
+	display:flex;
+	justify-content: center;
+	margin-top: 3vw;
+
+}
+button{
+	
+	padding:2%;
+
+	margin: 2%;
+	font-size: 15px;
+	background-color:#00b300;
+    
+    width:auto;
+	color:white;
+	cursor:pointer;
+	margin-top: 10%;
+	border:none;
+
+}
+button:hover{
+
+	background-color:#11b8f0;
+	color:black;
+	border-radius:50%;
+	transition-duration:0.8s;
+}
+.top
+{
+	background-image:url("background_profilee.jpg");
+	text-align: center;
+	
+	color:#00b300;
+	margin:0px;
+	padding-bottom:20px;
+	  background-size: cover;
+	  height:41vw;
+	  position:relative;
+	  padding-top: 50px;
+}
+p{
+	
+	margin:0;
+	font-size: 19px;
+}
+.line{
+width:18vw;
+}
+
+
+
+
+.info{
+ background-color: #80e5ff;
+ margin-top:-20px;
+ padding-top:10px;
+ font-size: 19px;
+ font-family:"Comic Sans MS", cursive, sans-serif;
+ 
+}
+li{
+	margin:10px;
+	padding:6px;
+}
+.details{
+	text-align:center;
+	padding-top: 18px;
+	margin-left:-30px;
+}
+
+@media only screen and (max-width:800px)
+{
+	.line{
+		width:30vw;
+	}
+	.top{
+		height:50vw;
+	}
+	.info{
+		font-size:18px;
+	}
+}
+@media only screen and (max-width:600px)
+{
+	.line{
+		width:40vw;
+	}
+	.top{
+		height:54vw;
+	}
+	.info{
+		font-size: 17px;
+	}
+}

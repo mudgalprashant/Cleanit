@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" media="screen"/>
+  
+   
+</head>
+<body>
+ {% if messages %}
+<div class="errormsg">
+  {% for message in messages %}
+  <span>{{ message }}</span>
+
+  {% endfor %}
+</div>
+  {% endif %}
+  <div class="newbody">
+
+  <div class = "container">
+    <br>
+   <h1 class="heade">About us</h1>
+
+    <p class="aboutus">Clean Banaega India is a platform where people across India organise themselves in team to clean there nearby places. Any one in India wishing to contribute to the cause can join . Be a proud citizen by doing your duties.</p>
+    
+  </div>
+    <div class="login">
+
+        <form class="loginform" method="POST"> 
+        {% csrf_token %} 
+        
+        <h2 class="loginheader">Clean Banega India</h2>
+        <br>
+                <a class="one">User Id:<br></a>
+          <input type="text" name="username" placeholder="Enter User Id" class="inputfield"><br>
+         <a class="two">Password:<br></a>
+          <input type="password" name="password" placeholder="Enter Password" class="inputfield"><br>
+      
+         <button class="loginbutton" name="submit">Login</button><br>
+          
+          <p class="newuser">New User? <a href="{% url 'signup-page' %}" style="color:green;">Sign Up</a></p>
+          
+ 
+
+        </form>
+      </div>
+  </div>
+  
+</body>
+</html>

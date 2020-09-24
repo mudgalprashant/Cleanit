@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8" /> 
+    <link rel="icon" href="{%static 'favicon.ico'%}"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+      <link rel = "stylesheet" type = "text/css" href ="{% static 'create.css '%}" />
+    <title>My new team</title>  
+  </head>  
+  <body>  
+  
+ 
+   			<div class="bodyinside">
+			<form class="formbody" method="POST">
+			{% csrf_token %}
+			<h1>Hello!! <br/>Lets Initiate a Change!</h1>
+			<label class="labelform">Team Name <br/>
+			<input class="formcreateteam"type="text" name="teamname"
+			placeHolder="Enter name of your team" required/></label>
+			<br/>
+			<label class="labelform">Drive City <br/>
+			<input class="formcreateteam" type="text" name="city"
+			 placeHolder="Enter city for your cleanliness drive" required/></label>
+			<br/>
+			<label class="labelform">Drive Location <br/>
+			<input class="formcreateteam" type="text" name="venue"
+			 placeHolder="Enter location for your cleanliness drive" required/></label>
+			<br/>
+			<label class="labelform">Drive Date: 
+			<input type="date" class="formcreateteam" name="date"
+			placeHolder="dd/mm/yyyy format" required/></label>
+			<br/>
+			<label class="labelform">Further Details <br/>
+			<input type="textarea" class="formcreateteam" name="body"
+			 placeHolder="Ex : person to contact for further details." required/></label>
+			<br/>
+			 <button type="submit" class="btn1 ">Create!!</button>
+			 <button onclick="location.href='{% url 'home-page' %}'"class="btn1 cancelbtn">Cancel</button>
+			</form>
+			</div> 
+
+			
+  </body>  
+</html>  
